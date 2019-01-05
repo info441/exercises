@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b9237edc-3b44-4ada-bca3-91f2b6bf1428" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/helloworld/server/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/helloworld/server/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helloworld/server/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/helloworld/server/main.go" afterDir="false" />
-    </list>
+    <list default="true" id="b9237edc-3b44-4ada-bca3-91f2b6bf1428" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,21 +20,21 @@
         <counts>
           <entry key="go" value="4" />
           <entry key="html" value="2" />
-          <entry key="md" value="9" />
+          <entry key="md" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Go" value="4" />
           <entry key="HTML" value="2" />
-          <entry key="Markdown" value="9" />
+          <entry key="Markdown" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="go" value="170" />
           <entry key="html" value="24" />
-          <entry key="md" value="4836" />
+          <entry key="md" value="4837" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -45,30 +42,21 @@
           <entry key="Bash" value="1" />
           <entry key="Go" value="170" />
           <entry key="HTML" value="24" />
-          <entry key="Markdown" value="4835" />
+          <entry key="Markdown" value="4836" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/helloworld/client/README.md">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/helloworld/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="345">
-                <caret line="15" column="122" selection-start-line="15" selection-start-column="122" selection-end-line="15" selection-end-column="122" />
+              <first_editor relative-caret-position="230">
+                <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
               </first_editor>
               <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/helloworld/client/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -90,12 +78,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/helloworld/server/identicon.go" />
-        <option value="$PROJECT_DIR$/helloworld/README.md" />
         <option value="$PROJECT_DIR$/../bdinh/exercises-bdinh/helloclient/index.html" />
-        <option value="$PROJECT_DIR$/helloworld/client/README.md" />
         <option value="$PROJECT_DIR$/helloworld/server/main.go" />
         <option value="$PROJECT_DIR$/helloworld/server/README.md" />
         <option value="$PROJECT_DIR$/helloworld/client/index.html" />
+        <option value="$PROJECT_DIR$/helloworld/client/README.md" />
+        <option value="$PROJECT_DIR$/helloworld/README.md" />
       </list>
     </option>
   </component>
@@ -110,11 +98,13 @@
     <option name="width" value="1278" />
     <option name="height" value="1080" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -127,17 +117,10 @@
               <item name="exercises-base" type="462c0819:PsiDirectoryNode" />
               <item name="helloworld" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="exercises-base" type="b2602c69:ProjectViewProjectNode" />
-              <item name="exercises-base" type="462c0819:PsiDirectoryNode" />
-              <item name="helloworld" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -161,17 +144,12 @@
     </option>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1680" y="0" width="1278" height="1080" extended-state="0" />
+    <frame x="1680" y="23" width="1278" height="1057" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15695792" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15938511" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -179,10 +157,15 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,16 +179,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="45" column="35" lean-forward="true" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helloworld/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="184">
-            <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -239,20 +212,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/helloworld/client/index.html" />
     <entry file="file://$PROJECT_DIR$/helloworld/client/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="345">
-            <caret line="15" column="122" selection-start-line="15" selection-start-column="122" selection-end-line="15" selection-end-column="122" />
+          <first_editor relative-caret-position="23">
+            <caret line="1" selection-start-line="1" selection-end-line="1" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/helloworld/client/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+    <entry file="file://$PROJECT_DIR$/helloworld/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="230">
+            <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

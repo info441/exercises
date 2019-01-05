@@ -1,0 +1,16 @@
+.DS_Store
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea
+node_modules
+tls
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
