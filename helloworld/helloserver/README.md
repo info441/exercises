@@ -37,7 +37,7 @@ change it accordingly to what you used inside `main.go`.
 ```bash
 export ADDR=localhost:4000
 go install 
-server
+helloserver
 ```
 
 

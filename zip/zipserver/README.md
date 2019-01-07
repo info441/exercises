@@ -46,3 +46,11 @@ given argument and returns a pointer to the `ZipIndexHandler` struct.
     - Get the zips for the requested city of interest from your `ZipIndex` and encode it as `json` to the `ResponseWriter`.
 - Implement a `RootHandler` that handles the `/` resource path which returns the given string to the client, `"Try requesting /zips/city/seattle"`
 
+### Compile, Install and Run
+Execute the following inside your terminal. Below assumes you've used `ADDR` as your environment variable name. Please
+change it accordingly to what you used inside `main.go`.
+```bash
+export ADDR=localhost:4000
+go install 
+zipserver
+```
