@@ -5,7 +5,7 @@ with your server. Below is an example of what the final exercise could look like
 
 ![GIF of Final Version](./img/helloworld.gif)
 
-Instructions can be found in `./client/` and `./server/`.
+Instructions can be found in `./client/` and `./helloserver/`.
 
 The original exercise is credited to [David Stearns](https://github.com/drstearns) and the material he made readily 
 available by means of his INFO344 course on Server Side Development.

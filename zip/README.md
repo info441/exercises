@@ -8,7 +8,7 @@ below.
 In general, your web client will use the server that you built in order to populate fields based on the name of the city
 entered on the client. 
 
-Instructions can be found in `./client/` and `./server/`.
+Instructions can be found in `./client/` and `./zipserver/`.
 
 The original exercise is credited to [David Stearns](https://github.com/drstearns) and the material he made readily 
 available by means of his INFO344 course on Server Side Development.
