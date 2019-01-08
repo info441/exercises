@@ -1,5 +1,5 @@
 # Web Client for zip
-Ensure that your web API server in the `../server/` directory is running and ready for requests. 
+Ensure that your web API server in the `../zipserver/` directory is running and ready for requests. 
 then create a new web app in this directory that meets the following requirements:
 - Your application must have an `<input>` element where the user can enter a city
 - Your application must have **two** `<select>` elements that get auto-populated based on the results

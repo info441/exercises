@@ -1,6 +1,6 @@
 # Web Client for helloworld
 
-Ensure that your web API server in the `../server/` directory is running and ready for requests. Then create a new web
+Ensure that your web API server in the `../helloserver/` directory is running and ready for requests. Then create a new web
  app in this directory that meets the following requirements:
 
 - Your page must have an `<input>` element into which the user can type their name. 
