@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello Web Client</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<header class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1>Hello World Web Client</h1>
+    </div>
+</header>
+<div class="container">
+    <form id="name-form">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="enter your name">
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="row mt-3">
+        <div class="col-auto">
+            <img id="identicon" src="" alt="">
+        </div>
+        <div class="col">
+            <h1 id="greeting"></h1>
+        </div>
+    </div>
+</div>
+
+<script>
+    let baseURL = "http://localhost:4000"
+    let form = document.querySelector("#name-form");
+    let input = form.querySelector("input");
+    let greeting = document.querySelector("#greeting");
+    let identicon = document.querySelector("#identicon");
+    form.addEventListener("submit", evt => {
+        evt.preventDefault();
+        identicon.src = baseURL + "/identicon/" + input.value;
+        identicon.alt = "identicon for " + input.value;
+        fetch(baseURL + "/?name=" + input.value)
+                .then(response => response.text())
+                .then(message => greeting.textContent = message)
+                .catch(err => alert(err));
+    })
+</script>
+</body>
+</html>
