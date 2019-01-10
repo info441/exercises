@@ -4,7 +4,7 @@ Approach this exercise by completing each of the steps described below for their
 
 `./models/zip.go`
 - This file contains starter code that you should get familiar with. You'll be using the types, `Zip`, `ZipSlice`, `ZipIndex`,
-defined here, as well as the `LoadZips` function. Ask questions if you're confuse. 
+defined here, as well as the `LoadZips` function. Ask questions if you're confused. 
 
 `./main.go`:
 - Open the `zips.csv` file inside your `./data` directory and report any errors that may occur
