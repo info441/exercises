@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zip Web Client</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        .input-group {
+            padding: 0!important;
+        }
+    </style>
+</head>
+<body>
+<header class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1>Zip Web Client</h1>
+    </div>
+</header>
+<div class="container">
+    <form id="zip-form" class="row">
+        <div class="input-group col-sm-4">
+            <input type="text" class="form-control" placeholder="enter a city">
+        </div>
+        <div class="input-group col-sm-4">
+            <select class="form-control" id="select-state">
+            </select>
+        </div>
+        <div class="input-group col-sm-4">
+            <select class="form-control" id="select-zip">
+            </select>
+        </div>
+    </form>
+
+</div>
+
+<script>
+    let baseURL = "http://localhost:4000"
+    let form = document.querySelector("#zip-form");
+    let input = form.querySelector("input");
+    let state = document.querySelector("#select-state");
+    let zip = document.querySelector("#select-zip");
+
+    // Init a timeout variable to be used below
+    let timeout = null;
+    // Listen for keystroke events
+    input.onkeyup = function (e) {
+
+        zip.innerHTML = ""
+        // Clear the timeout if it has already been set.
+        // This will prevent the previous task from executing
+        // if it has been less than <MILLISECONDS>
+        clearTimeout(timeout);
+
+        // Make a new timeout set to go off in 800ms
+        timeout = setTimeout(() => {
+            fetch(baseURL + "/zips/city/" + input.value)
+                    .then((response) => {
+                        if (response.ok) {
+                            return response.json()
+                        }
+                        throw Error(response.statusText)
+                    })
+                    .then((res) => {
+                        let stateDict = {}
+                        if (res) {
+                            res.map((obj) => {
+                                if (!(obj.state in stateDict)) {
+                                    stateDict[obj.state] = obj.state
+                                }
+                                let insertOption = document.createElement("option")
+                                insertOption.innerText = obj.code
+                                zip.appendChild(insertOption)
+                            })
+                        }
+                        Object.keys(stateDict).map((key) => {
+                            let insertOption = document.createElement("option")
+                            insertOption.innerText = key
+                            state.appendChild(insertOption)
+                        })
+                    })
+                    .catch((e) => {
+                        console.log(e)
+                    })
+
+        }, 500);
+    };
+
+</script>
+</body>
+</html>
