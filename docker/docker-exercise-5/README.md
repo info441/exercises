@@ -1,3 +1,37 @@
+# Solution
+
+You do not need to modify the go source code, but you will need to modify the `Dockerfile`.
+
+```
+# build the go executable for linux
+GOOS=linux go build
+
+# set up your Dockerfile! The Dockerfile on this branch is correct!
+
+# build your docker container. Make sure to replace "brendankellogg" with your Dockerhub name!
+docker build -t brendankellogg/docker-exercise-5 .
+
+# clean up the built Go executable
+go clean
+
+# run your newly built container. Make sure to replace "brendankellogg" with your Dockerhub name!
+docker run -d \
+-p 4000:4000 \
+-e PORT=4000 \
+-e STATICDIR=/static/ \
+brendankellogg/docker-exercise-5
+
+# You should now be able to see the container on http://localhost:4000/
+```
+
+## Things To Note
+
+We do not need to specify a specific file with the `STATICDIR` environment variable since we are serving the entre directory
+
+We do not need to volume mount the static directory since we added the static directory with the Dockerfile. However, you can do it this way if you'd like. Remove the COPY command from the Dockerfile that adds the static directory in and add a volume mount to the run command above that allows the container to see the static directory at the location specified by the STATICDIR environment variable in the run command above.
+
+`STATICDIR` expects an absolute filepath (including the file name) to the location of the file within the context of the container. That is, the filepath provided should be where that file lives inside of the container and NOT where it is on your host machine.
+
 # Docker Excercise Five
 
 This is a simple challenge that involves publishing ports and setting environment variables, as well as mounting volumes and creating a Dockerfile when building and running a Docker container. You also need to write the go program.

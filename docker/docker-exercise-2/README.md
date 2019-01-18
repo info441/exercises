@@ -1,3 +1,32 @@
+# Solution
+
+You do not need to modify either the go source code, or the Dockerfile.
+
+```
+# build the go executable for linux
+GOOS=linux go build
+
+# build your docker container. Make sure to replace "brendankellogg" with your Dockerhub name!
+docker build -t brendankellogg/docker-exercise-2 .
+
+# clean up the built Go executable
+go clean
+
+# run your newly built container. Make sure to replace "brendankellogg" with your Dockerhub name!
+docker run -d \
+-p 4000:4000 \
+-e PORT=4000 \
+brendankellogg/docker-exercise-2
+
+# You should now be able to see the container on http://localhost:4000/
+```
+
+## Things To Note
+
+You can use environment variables on the host machine to use on the container. For example `-e ADDR=$ADDR` will set an enivonment variable on the container to the vaule of `$ADDR` on the host machine.
+
+You cannot use container environment variables that you set (`-e PORT=4000`, for example) later in the run command. That is `-e PORT=4000 -p PORT:PORT` will not work.
+
 # Docker Excercise Two
 
 This is a simple challenge that involves publishing ports and setting environment variables when running a Docker container.

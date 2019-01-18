@@ -1,3 +1,36 @@
+# Solution
+
+You do not need to modify either the go source code, or the Dockerfile.
+
+```
+# build the go executable for linux
+GOOS=linux go build
+
+# build your docker container. Make sure to replace "brendankellogg" with your Dockerhub name!
+docker build -t brendankellogg/docker-exercise-3 .
+
+# clean up the built Go executable
+go clean
+
+# run your newly built container. Make sure to replace "brendankellogg" with your Dockerhub name!
+docker run -d \
+-p 4000:4000 \
+-e PORT=4000 \
+-e FILEPATH=/secret/secret-message.txt \
+-v $(pwd)/secret/:/secret/:ro \
+brendankellogg/docker-exercise-3
+
+# You should now be able to see the container on http://localhost:4000/
+```
+
+## Things To Note
+
+`FILEPATH` expects an absolute filepath (including the file name) to the location of the file within the context of the container. That is, the filepath provided should be where that file lives inside of the container and NOT where it is on your host machine.
+
+`-v` takes an absolute path and mounts it to an absolute path on the docker container. A quick way to get an absolute path from where you are is the `$(pwd)` which will evaluate to the current directory.
+
+**WINDOWS Users:** `$(pwd)` can be unreliable in this case. Docker seems to not like the drive letter format that Windows uses (`C:/some/path/`) and instead wants something like `//c/some/path/`. Replace the `$(pwd)` with `//c/rest/of/path/`.
+
 # Docker Excercise Three
 
 This is a simple challenge that involves publishing ports and setting environment variables, as well as mounting volumes when running a Docker container.
