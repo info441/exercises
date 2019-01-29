@@ -22,8 +22,10 @@ path for each feature
 ## Instructions 
 1. Download Postman [here](https://www.getpostman.com/downloads/).
 2. Navigate to this exercise's directory from within `terminal` or `git bash`. 
+    - Before you're able to run the webserver, please ensure that you have all of the required dependencies and
+    that any `import` statement are updated to correspond to your `path`.
 3. Run `go run main.go`. I've added `Print` statements that will print to `stdout` as you
-make requests to the server. Have `termianl` or `git bash`  open so that you can reference
+make requests to the server. Have `terminal` or `git bash`  open so that you can reference
 what is going on  internally. 
 4. Open up Postman. Upon opening up, it should look similar to what's shown below. ![Post Man Start Screen](./images/start-screen.png)
 For the sake of this exercise, just close the popup.

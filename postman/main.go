@@ -26,7 +26,7 @@ func main() {
 	//  the environment variable, using the mux you created as
 	//  the root handler. Use log.Fatal() to report any errors
 	//  that occur when trying to start the web server.
-	log.Printf("Server is listening at http://%s:", addr)
+	log.Printf("Server is listening at http://%s", addr)
 	log.Fatal(http.ListenAndServe(addr, mux))
 	
 }
