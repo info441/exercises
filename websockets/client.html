@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+
+            let sock;
+
+            document.addEventListener("DOMContentLoaded", (event) => {
+                sock = new WebSocket("ws://localhost:4001/ws");
+
+                sock.onopen = () => {
+                    console.log("Connection Opened");
+                };
+
+                sock.onclose = () => {
+                    console.log("Connection Closed");
+                };
+
+                sock.onmessage = (msg) => {
+                    console.log("Message received " + msg.data);
+
+                    document.getElementById("server-text").textContent = msg.data;
+                };
+
+            });
+
+            function submit() {
+                let clientMsg = document.getElementById("text-input").value;
+
+                console.log(clientMsg);
+
+                sock.send(clientMsg);
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" id="text-input" placeholder="Enter value to display" >
+        <input type="submit" onclick="submit();">
+        <div id="server-text"></div>
+        <div id="server-time"></div>
+    </body>
+</html>
