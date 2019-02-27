@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+		<script type="text/javascript">			
+			var socket = io.connect('http://localhost:5000', {reconnect: true});
+
+			socket.on('order_events', function(msg) {
+				console.log(msg);
+				insertStatus(msg);
+			});
+
+			const prices = {
+				"whopper": 13.99,
+				"bigmac": 14.99,
+				"innout": 6.99
+			};
+
+			function submitOrder() {
+				const selection = document.getElementById("burger").value;
+
+				fetch("http://localhost:4000/order", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify({
+						itemName: selection,
+						price: prices[selection]
+					})
+				})
+				.then(res => res.json())
+				.then(json => {
+					console.log(json.message);
+				});
+
+				showStatusTable();
+				clearStatus();
+			}
+
+			function showStatusTable() {
+				document.getElementById("status_table").setAttribute("style", "display: block")
+			}
+
+			// clear status table 
+			function clearStatus() {		
+				document.getElementById("status_content").innerHTML = "";
+			}	
+
+			// insert status 
+			function insertStatus(message) {
+				let row = document.createElement("tr");
+				let id = document.createElement("td");
+				let type = document.createElement("td");
+				let timestamp = document.createElement("td");
+				let messageStr = document.createElement("td");
+
+				id.textContent = message.orderId;
+				type.textContent = message.type;
+				timestamp.textContent = message.timestamp;
+				messageStr.textContent = message.messageStr;
+
+				row.appendChild(id);
+				row.appendChild(type);
+				row.appendChild(timestamp);
+				row.appendChild(messageStr);
+
+				document.getElementById("status_content").appendChild(row);
+			}
+
+		</script>
+	</head>
+
+	<body>
+		<h1> Burger Dash </h1>
+		<h2> Burger Home Delivery, Simplified </h2>
+		<h3> Submit Your Oder Below </h3>
+		<div>
+			<label> What Burger Do You Want? </label>
+			<select id="burger"> 
+				<option value="whopper"> Whopper - $12.99 + TIP </option>
+				<option value="bigmac"> Big Mac - $13.99 + TIP </option>
+				<option value="innout"> In N Out - $5.99 + TIP </option>
+			</select>
+			<br>
+			<input type="submit" onclick="submitOrder(); false;"> 
+		</div>
+
+		<table id="status_table" style="display: none;">
+			<thead> 
+				<th style="width: 10%"> OrderId </th>
+				<th style="width: 10%"> Status </th>
+				<th style="width: 20%"> Time </th>
+				<th style="width: 60%"> Message </th>
+			</thead>
+			<tbody id="status_content">
+								
+
+			</tbody>
+		</table>
+	</body>
+</html>
